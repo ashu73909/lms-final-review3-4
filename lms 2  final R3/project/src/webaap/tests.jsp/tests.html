@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tests - EduLearn</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Course Tests</h2>
+    <c:forEach items="${tests}" var="test">
+        <div class="test-card">
+            <h3>${test.title}</h3>
+            <p>Duration: ${test.duration} minutes</p>
+            <p>Questions: ${test.totalQuestions}</p>
+            <form action="startTest" method="post">
+                <input type="hidden" name="testId" value="${test.id}">
+                <button type="submit">Start Test</button>
+            </form>
+        </div>
+    </c:forEach>
+</div>
+</body>
+</html>
+
